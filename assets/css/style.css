@@ -1,0 +1,16 @@
+body {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.6em;
+}
+
+
+legend,
+input {
+    font-size: 1.4em;
+    line-height: 1.5;
+    padding: 10px;
+}
+
