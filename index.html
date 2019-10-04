@@ -6,132 +6,135 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Trivia Game</title>
     <link rel="stylesheet" type="text/css" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 
     
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
+    <div id="timer"></div>
+    <div id="win"></div>
+    <div id="loose"></div>
+    <div id="score"></div>
+    <div id="image"></div>
+        
+  
+           
                 <h1>Totally Trivial Trivia</h1>
-                <p class="timer"></p>
-                <form method="post" action="/Tests/Post/">      
+                <h2 class="time-remaining"></h2>
+                <!-- <form id="trivia-question">      
                           
                         <legend>Which year Demi-Leigh Neil-Peters become Miss Universe?</legend>      
-                        <input type="checkbox" name="favorite_pet" value="2017">2016      
-                        <input type="checkbox" name="favorite_pet" value="2017">2013      
-                        <input type="checkbox" name="favorite_pet" value="2017">2019
-                        <input type="checkbox" name="favorite_pet" value="2017">2017      
+                        <input type="checkbox" name="favorite_pet" value="2017">2016</input>     
+                        <input type="checkbox" name="favorite_pet" value="2017">2013</input>     
+                        <input type="checkbox" name="favorite_pet" value="2017">2019</input> 
+                        <input type="checkbox" name="favorite_pet" value="2017">2017</input>       
                              
                           
                             <legend>Name the largest planet in the universe</legend>      
-                            <input type="checkbox" name="favorite_pet" value="Jupiter">Cats      
-                            <input type="checkbox" name="favorite_pet" value="Jupiter">Dogs      
-                            <input type="checkbox" name="favorite_pet" value="Jupiter">Birds
-                            <input type="checkbox" name="favorite_pet" value="Jupiter">Birds      
+                            <input type="checkbox" name="favorite_pet" value="Jupiter">Cats</input>      
+                            <input type="checkbox" name="favorite_pet" value="Jupiter">Dogs</input>     
+                            <input type="checkbox" name="favorite_pet" value="Jupiter">Birds</input> 
+                            <input type="checkbox" name="favorite_pet" value="Jupiter">Birds</input>    
                                 
                         
                               
                                 <legend>Which year did Albert Einstein die?</legend>      
-                                <input type="checkbox" name="favorite_pet" value="1955">Cats      
-                                <input type="checkbox" name="favorite_pet" value="1955">Dogs      
-                                <input type="checkbox" name="favorite_pet" value="1955">Birds
-                                <input type="checkbox" name="favorite_pet" value="1955">Birds    
+                                <input type="checkbox" name="favorite_pet" value="1955">Cats</input>     
+                                <input type="checkbox" name="favorite_pet" value="1955">Dogs</input>    
+                                <input type="checkbox" name="favorite_pet" value="1955">Birds</input> 
+                                <input type="checkbox" name="favorite_pet" value="1955">Birds</input> 
                             
                                   
                                     <legend>Every action has an equal and opposite reaction. Who proposed this law?</legend>      
-                                    <input type="checkbox" name="favorite_pet" value="Newton">Cats      
-                                    <input type="checkbox" name="favorite_pet" value="Newton">Dogs      
-                                    <input type="checkbox" name="favorite_pet" value="Newton">Birds
-                                    <input type="checkbox" name="favorite_pet" value="Newton">Birds
+                                    <input type="checkbox" name="favorite_pet" value="Newton">Cats</input>     
+                                    <input type="checkbox" name="favorite_pet" value="Newton">Dogs</input>    
+                                    <input type="checkbox" name="favorite_pet" value="Newton">Birds</input> 
+                                    <input type="checkbox" name="favorite_pet" value="Newton">Birds</input> 
                                  
                                       
                                         <legend>Which year did the incident of Gulf Oil Spill occur?</legend>      
-                                        <input type="checkbox" name="favorite_pet" value="2010">Cats      
-                                        <input type="checkbox" name="favorite_pet" value="2010">Dogs      
-                                        <input type="checkbox" name="favorite_pet" value="2010">Birds
-                                        <input type="checkbox" name="favorite_pet" value="2010">Birds     
+                                        <input type="checkbox" name="favorite_pet" value="2010">Cats</input>    
+                                        <input type="checkbox" name="favorite_pet" value="2010">Dogs</input>     
+                                        <input type="checkbox" name="favorite_pet" value="2010">Birds</input> 
+                                        <input type="checkbox" name="favorite_pet" value="2010">Birds</input>    
                                     
                                           
                                             <legend>HaMossad leModiʿin uleTafkidim Meyuḥadim is the national intelligence agency of which country?</legend>      
-                                            <input type="checkbox" name="favorite_pet" value="Israel">Cats      
-                                            <input type="checkbox" name="favorite_pet" value="Israel">Dogs      
-                                            <input type="checkbox" name="favorite_pet" value="Israel">Birds
-                                            <input type="checkbox" name="favorite_pet" value="Israel">Birds     
+                                            <input type="checkbox" name="favorite_pet" value="Israel">Cats</input>     
+                                            <input type="checkbox" name="favorite_pet" value="Israel">Dogs</input>     
+                                            <input type="checkbox" name="favorite_pet" value="Israel">Birds</input> 
+                                            <input type="checkbox" name="favorite_pet" value="Israel">Birds</input>    
                                         
                                               
                                                 <legend>Name the famous stage actor who killed Abraham Lincoln in 1865?</legend>      
-                                                <input type="checkbox" name="favorite_pet" value="John Wikes Booth">Cats      
-                                                <input type="checkbox" name="favorite_pet" value="John Wikes Booth">Dogs      
-                                                <input type="checkbox" name="favorite_pet" value="John Wikes Booth">Birds
-                                                <input type="checkbox" name="favorite_pet" value="John Wikes Booth">Birds     
+                                                <input type="checkbox" name="favorite_pet" value="John Wikes Booth">Cats</input>     
+                                                <input type="checkbox" name="favorite_pet" value="John Wikes Booth">Dogs</input>     
+                                                <input type="checkbox" name="favorite_pet" value="John Wikes Booth">Birds</input> 
+                                                <input type="checkbox" name="favorite_pet" value="John Wikes Booth">Birds </input>     
                                             
                                                   
                                                     <legend>Who discovered human cell?</legend>      
-                                                    <input type="checkbox" name="favorite_pet" value="Robert Hooke">Cats      
-                                                    <input type="checkbox" name="favorite_pet" value="Robert Hooke">Dogs      
-                                                    <input type="checkbox" name="favorite_pet" value="Robert Hooke">Birds
-                                                    <input type="checkbox" name="favorite_pet" value="Robert Hooke">Birds    
+                                                    <input type="checkbox" name="favorite_pet" value="Robert Hooke">Cats</input>    
+                                                    <input type="checkbox" name="favorite_pet" value="Robert Hooke">Dogs</input>     
+                                                    <input type="checkbox" name="favorite_pet" value="Robert Hooke">Birds</input> 
+                                                    <input type="checkbox" name="favorite_pet" value="Robert Hooke">Birds</input>   
                                                 
                                                       
                                                         <legend>What’s the name of France’s external intelligence agency?</legend>      
-                                                        <input type="checkbox" name="favorite_pet" value="General Directorate for External Security">Cats      
-                                                        <input type="checkbox" name="favorite_pet" value="General Directorate for External Security">Dogs      
-                                                        <input type="checkbox" name="favorite_pet" value="General Directorate for External Security">Birds
-                                                        <input type="checkbox" name="favorite_pet" value="General Directorate for External Security">Birds     
+                                                        <input type="checkbox" name="favorite_pet" value="General Directorate for External Security">Cats</input>     
+                                                        <input type="checkbox" name="favorite_pet" value="General Directorate for External Security">Dogs</input>   
+                                                        <input type="checkbox" name="favorite_pet" value="General Directorate for External Security">Birds</input> 
+                                                        <input type="checkbox" name="favorite_pet" value="General Directorate for External Security">Birds</input>  
                                                     
                                                           
                                                             <legend>Beauty with brains is the basic concept of which famous competition?</legend>      
-                                                            <input type="checkbox" name="favorite_pet" value="Miss Universe">Cats      
-                                                            <input type="checkbox" name="favorite_pet" value="Miss Universe">Dogs      
-                                                            <input type="checkbox" name="favorite_pet" value="Miss Universe">Birds
-                                                            <input type="checkbox" name="favorite_pet" value="Miss Universe">Birds      
+                                                            <input type="checkbox" name="favorite_pet" value="Miss Universe">Cats</input>   
+                                                            <input type="checkbox" name="favorite_pet" value="Miss Universe">Dogs</input>   
+                                                            <input type="checkbox" name="favorite_pet" value="Miss Universe">Birds</input> 
+                                                            <input type="checkbox" name="favorite_pet" value="Miss Universe">Birds</input>  
                                                         
                                                               
                                                                 <legend>Who invented calculus</legend>      
-                                                                <input type="checkbox" name="favorite_pet" value="Sir Isaac Newton">Cats      
-                                                                <input type="checkbox" name="favorite_pet" value="Sir Isaac Newton">Dogs      
-                                                                <input type="checkbox" name="favorite_pet" value="Sir Isaac Newton">Birds
-                                                                <input type="checkbox" name="favorite_pet" value="Sir Isaac Newton">Birds     
+                                                                <input type="checkbox" name="favorite_pet" value="Sir Isaac Newton">Cats</input>   
+                                                                <input type="checkbox" name="favorite_pet" value="Sir Isaac Newton">Dogs</input>  
+                                                                <input type="checkbox" name="favorite_pet" value="Sir Isaac Newton">Birds</input> 
+                                                                <input type="checkbox" name="favorite_pet" value="Sir Isaac Newton">Birds</input> 
                                                             
                                                                   
                                                                     <legend>In 2006, four intelligent brains created Twitter. Do they include Jack Dorsey, Noah Glass, Evan William, and?</legend>      
-                                                                    <input type="checkbox" name="favorite_pet" value="Biz Stone">Cats      
-                                                                    <input type="checkbox" name="favorite_pet" value="Biz Stone">Dogs      
-                                                                    <input type="checkbox" name="favorite_pet" value="Biz Stone">Birds
-                                                                    <input type="checkbox" name="favorite_pet" value="Biz Stone">Birds  
+                                                                    <input type="checkbox" name="favorite_pet" value="Biz Stone">Cats</input> 
+                                                                    <input type="checkbox" name="favorite_pet" value="Biz Stone">Dogs</input> 
+                                                                    <input type="checkbox" name="favorite_pet" value="Biz Stone">Birds</input> 
+                                                                    <input type="checkbox" name="favorite_pet" value="Biz Stone">Birds</input> 
                                                                 
                                                                       
                                                                         <legend>Who wrote, (Around the world in Eighty Days)?</legend>      
-                                                                        <input type="checkbox" name="favorite_pet" value="Jules Verne">Cats      
-                                                                        <input type="checkbox" name="favorite_pet" value="Jules Verne">Dogs      
-                                                                        <input type="checkbox" name="favorite_pet" value="Jules Verne">Birds
-                                                                        <input type="checkbox" name="favorite_pet" value="Jules Verne">Birds    
+                                                                        <input type="checkbox" name="favorite_pet" value="Jules Verne">Cats</input>    
+                                                                        <input type="checkbox" name="favorite_pet" value="Jules Verne">Dogs</input>  
+                                                                        <input type="checkbox" name="favorite_pet" value="Jules Verne">Birds</input> 
+                                                                        <input type="checkbox" name="favorite_pet" value="Jules Verne">Birds</input> 
                                                                     
                                                                           
                                                                             <legend>Fear of closely-packed holes is called?</legend>      
-                                                                            <input type="checkbox" name="favorite_pet" value="Trypophobia">Cats      
-                                                                            <input type="checkbox" name="favorite_pet" value="Trypophobia">Dogs      
-                                                                            <input type="checkbox" name="favorite_pet" value="Trypophobia">Birds
-                                                                            <input type="checkbox" name="favorite_pet" value="Trypophobia">Birds     
+                                                                            <input type="checkbox" name="favorite_pet" value="Trypophobia">Cats</input>     
+                                                                            <input type="checkbox" name="favorite_pet" value="Trypophobia">Dogs</input>    
+                                                                            <input type="checkbox" name="favorite_pet" value="Trypophobia">Birds</input> 
+                                                                            <input type="checkbox" name="favorite_pet" value="Trypophobia">Birds</input>   
                                                                         
                                                                               
                                                                                 <legend>In which city of Spain did Columbus die?</legend>      
-                                                                                <input type="checkbox" name="favorite_pet" value="Valladolid">Cats      
-                                                                                <input type="checkbox" name="favorite_pet" value="Valladolid">Dogs      
-                                                                                <input type="checkbox" name="favorite_pet" value="Valladolid">Birds
-                                                                                <input type="checkbox" name="favorite_pet" value="Valladolid">Birds     
+                                                                                <input type="checkbox" name="favorite_pet" value="Valladolid">Cats</input> 
+                                                                                <input type="checkbox" name="favorite_pet" value="Valladolid">Dogs</input> 
+                                                                                <input type="checkbox" name="favorite_pet" value="Valladolid">Birds</input> 
+                                                                                <input type="checkbox" name="favorite_pet" value="Valladolid">Birds</input> 
                                                                                  
-                </form>
+                </form> -->
 
-            </div>
-        </div>
-    </div>
+           
+    <script src="app.js"></script>
     
-    
-    <div class="container"></div>
-    <div class="container"></div>
 
     
 </body>
