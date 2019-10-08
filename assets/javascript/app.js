@@ -4,22 +4,42 @@ var correct = 0;
 var incorrect = 0;
 var answered = 0;
 var unanswered = 0;
+var intervalId;
 
+//  When the stop button gets clicked, run the stop function.
+$("#startBtn").on("click", run);
+// $("#stop").on("click", stop);
 
-function tenSeconds() {
-    // in the element with an id of `time-left` add an h2 saying About 5 Seconds Left!
-    // console log 5 seconds left
-    $("#time-remaining").append("<h2>About 5 Seconds Left!</h2>");
-    setTimeout(fiveSeconds, 5000);
-    console.log("5 seconds left");
+//  When the resume button gets clicked, execute the run function.
+// $("#resume").on("click", run);
+
+//  The run function sets an interval
+//  that runs the decrement function once a second.
+//  *****BUG FIX******** 
+//  Clearing the intervalId prior to setting our new intervalId will not allow multiple instances.
+function run() {
+  clearInterval(intervalId);
+  intervalId = setInterval(decrement, 1000);
+}
+
+//  The decrement function.
+function decrement() {
+  //  Decrease number by one.
+  timer--;
+  //  Show the number in the #show-number tag.
+  $("#time-remaining").html("<h2>Time remaining: "+ timer + "</h2>");
+  //  Once number hits zero...
+  if (timer === 0) {
+    //  ...run the stop function.
+    stop();
+    //  Alert the user that time is up.
+    alert("Time Up!");
   }
-  tenSeconds();
-  
-//   function timeUp() {
-//     // in the element with an id of `time-left` add an h2 saying Time's Up!
-//     // console log done
-//     console.log("done");
-//     $("#time-remaining").append("<h2>About 10 Seconds Left!</h2>");
-//     console.log("time is up");
-//   }
-//   timeUp(); 
+}
+
+//  The stop function
+function stop() {
+
+  //  Clear our intervalId, we just pass the name of the intervalto the clearInterval function.
+  clearInterval(intervalId);
+}

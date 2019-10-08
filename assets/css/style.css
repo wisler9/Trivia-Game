@@ -2,15 +2,30 @@ body {
     text-align: center;
 }
 
-h1 {
-    font-size: 3.6em;
+.wrapper {
+    width: 1024px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: rgb(220, 220, 146);
 }
 
-.timer {
-    font-size: 2.2em;
-    padding: 20 0;  
-} 
+h1 {
+    font-size: 5em;
+    padding-top: 100px;
+    color: blue;
+}
 
+#startBtn  {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 25px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+    margin: 150px 0;
+}
 
 legend,
 input {
@@ -18,5 +33,3 @@ input {
     line-height: 1.5;
     padding: 10px;
 }
-
-    
