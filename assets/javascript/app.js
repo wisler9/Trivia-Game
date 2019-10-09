@@ -1,3 +1,6 @@
+$(document).ready(() => {
+
+
 var counter = 0;
 var timer = 45;
 var correct = 0;
@@ -7,7 +10,27 @@ var unanswered = 0;
 var intervalId;
 
 //  When the stop button gets clicked, run the stop function.
-$("#startBtn").on("click", run);
+$("#startBtn").click(function(){
+  run();
+  disableButton();
+});
+
+
+function disableButton(){
+  $("#startBtn").remove();
+  alert("Button has been disabled.");
+}
+
+
+
+// $("#startBtn").click(disableButton, run);
+
+
+// function disableButton(){
+//   $("#startBtn").remove();
+//   alert("Button has been disabled.");
+// }
+
 // $("#stop").on("click", stop);
 
 //  When the resume button gets clicked, execute the run function.
@@ -43,3 +66,63 @@ function stop() {
   //  Clear our intervalId, we just pass the name of the intervalto the clearInterval function.
   clearInterval(intervalId);
 }
+
+
+// Array list of questions
+
+var quest = [
+  {
+    q1: "Which year Demi-Leigh Neil-Peters become Miss Universe?",
+    a1: ["2016", "2013", "2019", "2017"],
+    correctAnswer: 4
+  },
+  {
+    q2: "Name the largest planet in the universe",
+    a2: ["Saturn", "Jupiter", "Pluto", "Mars"],
+    correctAnswer: 2
+  },
+  {
+    q3: "Which year did Albert Einstein die?",
+    a3: ["1960", "1952", "1955", "1958"],
+    correctAnswer: 3
+  },
+  {
+    q4: "Which year did the incident of Gulf Oil Spill occur?",
+    a4: ["2010", "2008", "2015", "2005"],
+    correctAnswer: 1
+  },
+  {
+    q5: "Who discovered human cell?",
+    a5: ["Leonard bean", "Issac Pots", "Adam Sandler", "Robert Hooke"],
+    correctAnswer: 4
+  },
+  {
+    q6: "In which city of Spain did Columbus die??",
+    a6: ["Barcelona", "Valladolid", "Madrid", "Seville"],
+    correctAnswer: 2
+  }
+];
+
+
+//  creating questions 
+
+function formQuestion (){
+  $("#form").html("<input> content</input>");
+  $("input").attr({
+    type: "radio",
+    name: "",
+    value: "",
+    text: ""
+
+  })
+}
+
+
+
+
+
+
+
+
+
+});
