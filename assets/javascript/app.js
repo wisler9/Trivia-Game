@@ -1,6 +1,6 @@
 $(document).ready(() => {
   var counter = 0;
-  var timer = 15;
+  var timer = 45;
   var correct = 0;
   var incorrect = 0;
   var answered = 0;
@@ -103,29 +103,35 @@ $(document).ready(() => {
     $("#form").html("<form></form>");
     for (let i = 0; i < quest.length; i++) {
       var element = quest[i];
-     ($(".triv-quest").append("<div class='qContainer'></div>"));
-      // $(".qContainer").append(element.q + "<br>");
+      $(".triv-quest").append("<div class='qContainer'></div>");
+      $(".triv-ans").append(element.q + "<br>");
       // console.log(element.q);
 
       // console.log(this);
-      
-      for (let k = 0; k < element.q.length; k++) {
-        $(".triv-ans").append("<button class='answer-button' id='button' data-name='"  + element.q[k] + "'>" +
-            element.q[k] + "</button>");
-      }
 
-      for (let j = 0; j < element.a.length; j++){
-        element.a[j]
-        $(".triv-ans").append("<input type='radio' name='4'>" + element.a[j] + "</input>" + "<br>");
+      // for (let k = 0; k < element.q.length; k++) {
+      //   $(".triv-ans").append("<button class='answer-button' id='button' data-name='"  + element.q[k] + "'>" +
+      //       element.q[k] + "</button>");
+      // }
+
+      for (let j = 0; j < element.a.length; j++) {
+        element.a[j];
+        $(".triv-ans").append(
+          "<input type='radio' name='4' value=''>" +
+            element.a[j] +
+            "</input>" +
+            "<br>"
+        );
       }
     }
 
-
     $("input").attr({
       type: "radio",
-      name: "",
+      name: "4",
       value: "",
       text: ""
     });
   }
 });
+
+

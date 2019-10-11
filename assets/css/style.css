@@ -1,5 +1,6 @@
 body {
     text-align: center;
+    /* background-color: rgb(220, 220, 146); */
 }
 
 .wrapper {
@@ -9,8 +10,10 @@ body {
     background-color: rgb(220, 220, 146);
 }
 
-.triv-ans {
-    display: inline;
+.triv-ans
+.qContainer {
+    display: inline; 
+     background-color: rgb(220, 220, 146);
 }
 
 h1 {
@@ -31,7 +34,6 @@ h1 {
     margin: 150px 0;
 }
 
-legend,
 input {
     font-size: 1.4em;
     line-height: 1.5;
