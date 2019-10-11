@@ -2,7 +2,7 @@ $(document).ready(() => {
 
 
 var counter = 0;
-var timer = 45;
+var timer = 15;
 var correct = 0;
 var incorrect = 0;
 var answered = 0;
@@ -10,15 +10,17 @@ var unanswered = 0;
 var intervalId;
 
 //  When the stop button gets clicked, run the stop function.
-$("#startBtn").click(function(){
+$("#startBtn").click(function(event){
+  event.preventDefault();
   run();
   disableButton();
+  formQuestion();
 });
 
 
 function disableButton(){
   $("#startBtn").remove();
-  alert("Button has been disabled.");
+  // alert("Button has been disabled.");
 }
 
 
@@ -56,7 +58,7 @@ function decrement() {
     //  ...run the stop function.
     stop();
     //  Alert the user that time is up.
-    alert("Time Up!");
+    // alert("Time Up!");
   }
 }
 
@@ -72,33 +74,33 @@ function stop() {
 
 var quest = [
   {
-    q1: "Which year Demi-Leigh Neil-Peters become Miss Universe?",
-    a1: ["2016", "2013", "2019", "2017"],
+    q: "Which year Demi-Leigh Neil-Peters become Miss Universe?",
+    a: ["2016", "2013", "2019", "2017"],
     correctAnswer: 4
   },
   {
-    q2: "Name the largest planet in the universe",
-    a2: ["Saturn", "Jupiter", "Pluto", "Mars"],
+    q: "Name the largest planet in the universe",
+    a: ["Saturn", "Jupiter", "Pluto", "Mars"],
     correctAnswer: 2
   },
   {
-    q3: "Which year did Albert Einstein die?",
-    a3: ["1960", "1952", "1955", "1958"],
+    q: "Which year did Albert Einstein die?",
+    a: ["1960", "1952", "1955", "1958"],
     correctAnswer: 3
   },
   {
-    q4: "Which year did the incident of Gulf Oil Spill occur?",
-    a4: ["2010", "2008", "2015", "2005"],
+    q: "Which year did the incident of Gulf Oil Spill occur?",
+    a: ["2010", "2008", "2015", "2005"],
     correctAnswer: 1
   },
   {
-    q5: "Who discovered human cell?",
-    a5: ["Leonard bean", "Issac Pots", "Adam Sandler", "Robert Hooke"],
+    q: "Who discovered human cell?",
+    a: ["Leonard bean", "Issac Pots", "Adam Sandler", "Robert Hooke"],
     correctAnswer: 4
   },
   {
-    q6: "In which city of Spain did Columbus die??",
-    a6: ["Barcelona", "Valladolid", "Madrid", "Seville"],
+    q: "In which city of Spain did Columbus die??",
+    a: ["Barcelona", "Valladolid", "Madrid", "Seville"],
     correctAnswer: 2
   }
 ];
@@ -106,8 +108,27 @@ var quest = [
 
 //  creating questions 
 
-function formQuestion (){
-  $("#form").html("<input> content</input>");
+function formQuestion(){
+  $("#form").html("<form></form>");
+  for (let i = 0; i < quest.length; i++) {
+    var element = quest[i];
+    console.log($(".triv-quest").append("<div class='qContainer'></div>"));
+    $(".qContainer").append(element.q + "<br>");
+  // console.log(element.q);
+
+
+  for ( i = 0; i < element[this.currentQuestion].a.length; i++) {
+    card.append("<button class='answer-button' id='button' data-name='" + element[this.currentQuestion].a[i]
+    + "'>" + elementt[this.currentQuestion].a[i] + "</button>");
+  }
+
+
+    // for (let j = 0; j < element.a.length; j++){
+    //   element.a[j]
+    //   $(".triv-ans").append("<input type='radio' name='4'>" + element.a[j] + "</input>" + "<br>");
+    // }
+
+  }
   $("input").attr({
     type: "radio",
     name: "",
@@ -115,6 +136,7 @@ function formQuestion (){
     text: ""
 
   })
+  
 }
 
 

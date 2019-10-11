@@ -9,6 +9,10 @@ body {
     background-color: rgb(220, 220, 146);
 }
 
+.triv-ans {
+    display: inline;
+}
+
 h1 {
     font-size: 5em;
     padding-top: 100px;
